@@ -1,4 +1,46 @@
 body{
     background-color: #282a36;
     font-family: 'Varela Round', sans-serif;
+    overflow: scroll;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-corner{
+    background-color: #8995a0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #8995a0;
+    border-radius: 2vh;
+}
+
+.btnConfig{
+    width: 45px;
+    height:45px;
+    border-radius: 100%;
+    right: 2vh;
+    position:fixed; 
+    bottom: 2vh;
+    border: 1px solid #f1fa8c;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    background-color:#282a36;
+}
+
+.iconConfig{
+    margin: 0 auto;
+    font-size:1em; 
+    color:#f1fa8c
+}
+
+
+.btnConfig:hover{
+    background-color: #f1fa8c;
+}
+
+.btnConfig:hover i{
+    color: #282a36;
 }

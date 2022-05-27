@@ -1,0 +1,99 @@
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+  
+.mySlides {
+    display: none;
+}
+  
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}      
+  
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+} 
+  
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: #44475a;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px 0 0 3px;
+    user-select: none;
+    z-index:100
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    color: #f8f8f2!important;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1}
+    to {opacity: 0;}
+}
+
+.contentNews{
+    margin-top: 2vh;
+    padding: 0px 42px;
+    margin-left: 2vh;
+}
+
+.imgNotice{
+    border-radius: 1vh; 
+    border: 1px solid #ffb86c;
+    width: 200px;
+}
+
+.divText{
+    margin-left: 2vh;
+    align-self: center;
+    line-height: 1vh;
+}
+
+.site{
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+
+.techtudo p{
+    color:#ffb86c;
+}
+
+.tecmundo p{
+    color:#8be9fd;
+}
+
+.infomoney{
+    color:#50fa7b;
+}
+
+.title{
+    color:#8995a0; 
+    font-weight: bold
+}

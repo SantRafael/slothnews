@@ -20,6 +20,9 @@
 
     <body>
         <div class="container">
+            <?php 
+                require_once('services/getNews.php');
+            ?>
         </div>
         
         <button class="btnConfig"><i class="fa fa-cogs iconConfig"></i></button>

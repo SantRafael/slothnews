@@ -5,33 +5,51 @@
 
     $news = json_decode($newsJson);
 
-    function getNews($news, $slideNews){
+    function mountHtml($html, $site, $class, $i, $nameSite){
+        $html = str_replace('#class',         $class,                $html);
+        $html = str_replace('#siteImg',       $nameSite.'Img',       $html);
+        $html = str_replace('#siteTextColor', $nameSite.'TextColor', $html);
+        $html = str_replace('#site',          strtoupper($nameSite), $html);
+        $html = str_replace('#urlImg',        $site[$i]->img,        $html);
+        $html = str_replace('#title',         $site[$i]->texto,      $html);
+        
+        return $html; 
+    }
+
+    function extractNews($slideNews, $site, $count, $nameSite){
+        $htmlFinal = '';
+        for($i = 0; $i < $count; $i++ ){
+            $iMateria = $i+1;
+
+            $class = "materia$iMateria fadeIn";
+            if($i > 0)
+                $class .= " mySlides";
+            
+            $html = $slideNews;
+            $htmlFinal .= mountHtml($html, $site, $class, $i, $nameSite);
+        }
+
+        return $htmlFinal;
+    }
+
+    function mountHtmlFinal($slide, $slideContainer){
+        return str_replace('#slides', $slide, $slideContainer);
+    }
+
+    function getNews($news, $slideNews, $slideContainer){
         $techtudo  = $news->techtudo;
         $tecmundo  = $news->tecmundo;
         $infomoney = $news->infomoney;
 
-        
-        $htmlFinal = '';
-        
+        $techtudoHtml  = extractNews($slideNews, $techtudo,  count($techtudo),  'techtudo');
+        $tecmundoHtml  = extractNews($slideNews, $tecmundo,  count($tecmundo),  'tecmundo');
+        $infomoneyHtml = extractNews($slideNews, $infomoney, count($infomoney), 'infomoney');
 
-        $cont = count($techtudo);
+        $htmlFinal  = mountHtmlFinal($techtudoHtml, $slideContainer);
+        $htmlFinal .= mountHtmlFinal($tecmundoHtml, $slideContainer);
+        $htmlFinal .= mountHtmlFinal($infomoneyHtml, $slideContainer);
 
-        for($i = 0; $i < $cont; $i++ ){
-            $iMateria = $i+1;
-            $class = "materia$iMateria fadeIn";
-            if($i > 0)
-                $class .= " mySlides";  
-
-            $html = $slideNews;
-            $html = str_replace('#class',  $class,  $html);
-            $html = str_replace('#siteImg',  'techtudoImg',  $html);
-            $html = str_replace('#site',     'TECHTUDO',      $html);
-            $html = str_replace('#urlImg',   $techtudo[$i]->img,   $html);
-            $html = str_replace('#title',    $techtudo[$i]->texto, $html);
-            $htmlFinal .= $html;            
-        }
         return $htmlFinal;
     }
 
-    $slides = getNews($news, $slideNews);
-    echo str_replace('#slides', $slides, $slideContainer);
+    echo getNews($news, $slideNews, $slideContainer);

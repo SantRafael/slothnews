@@ -111,7 +111,7 @@
 .divText{
     margin-left: 2vh;
     align-self: center;
-    line-height: 1vh;
+    line-height: 1.7vh;
 }
 
 .siteName{
@@ -145,5 +145,6 @@
 
 .title{
     color:#8995a0; 
-    font-weight: bold
+    font-weight: bold;
+    font-size: 1.2em;
 }

@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    function prev(atual, final, slide){
+      for(i=0;i<20;i++){
+        if($('.materia'+i).is(':visible')){
+          let next = i + 1;
+          $('.materia'+i).removeClass('fadeIn')
+          $('.materia'+i).addClass('fadeOut')
+          setTimeout(function(){$('.materia'+i).addClass('mySlides')},500)
+          setTimeout(function(){$('.materia'+next).removeClass('mySlides');$('.materia'+next).addClass('fadeIn');$('.materia'+i).removeClass('fadeOut');},500)
+          break;
+        }
+    }
+
     $('.next').click(function(){
       for(i=0;i<20;i++){
         if($('.materia'+i).is(':visible')){

@@ -32,8 +32,12 @@
         return $htmlFinal;
     }
 
-    function mountHtmlFinal($slide, $slideContainer){
-        return str_replace('#slides', $slide, $slideContainer);
+    function mountHtmlFinal($slide, $slideContainer, $count, $positionSlide){
+        $htmlFinal = str_replace('#slides', $slide,         $slideContainer);
+        $htmlFinal = str_replace('#final',  $count,         $htmlFinal);
+        $htmlFinal = str_replace('#slide',  $positionSlide, $htmlFinal);
+
+        return $htmlFinal;
     }
 
     function getNews($news, $slideNews, $slideContainer){
@@ -45,9 +49,9 @@
         $tecmundoHtml  = extractNews($slideNews, $tecmundo,  count($tecmundo),  'tecmundo');
         $infomoneyHtml = extractNews($slideNews, $infomoney, count($infomoney), 'infomoney');
 
-        $htmlFinal  = mountHtmlFinal($techtudoHtml, $slideContainer);
-        $htmlFinal .= mountHtmlFinal($tecmundoHtml, $slideContainer);
-        $htmlFinal .= mountHtmlFinal($infomoneyHtml, $slideContainer);
+        $htmlFinal  = mountHtmlFinal($techtudoHtml, $slideContainer,   count($techtudo),  1);
+        $htmlFinal .= mountHtmlFinal($tecmundoHtml, $slideContainer,   count($tecmundo),  2);
+        $htmlFinal .= mountHtmlFinal($infomoneyHtml, $slideContainer,  count($infomoney), 3);
 
         return $htmlFinal;
     }

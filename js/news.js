@@ -1,10 +1,10 @@
-function next(atual, final, slide){
-    if(final){
-      let proximo = 1;
-    }
-    else{
-      let proximo = atual + 1;
-    }      
+function next(final, slide){
+    // if(final){
+    //   let proximo = 1;
+    // }
+    // else{
+    //   let proximo = atual + 1;
+    // }      
 
     $('.materia'+atual).removeClass('fadeIn')
     $('.materia'+atual).addClass('fadeOut')

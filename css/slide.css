@@ -1,12 +1,4 @@
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-    border-bottom: 1px solid #44475a;
-    padding: 0 0 2vh 0;
-}
-  
-.mySlides {
+  .mySlides {
     display: none;
 }
   
@@ -59,8 +51,11 @@
 
 .contentNews{
     margin-top: 2vh;
-    padding: 0px 42px;
     margin-left: 2vh;
+    max-width: 1000px;
+    position: relative;
+    border-bottom: 1px solid #44475a;
+    padding: 0 0 2vh 0;    
 }
 
 .imgNotice{
@@ -111,7 +106,7 @@
 .divText{
     margin-left: 2vh;
     align-self: center;
-    line-height: 1.7vh;
+    line-height: 1;
 }
 
 .siteName{
@@ -147,4 +142,19 @@
     color:#8995a0; 
     font-weight: bold;
     font-size: 1.2em;
+}
+
+@media screen and (max-width: 576px) {
+    .imgNotice{
+        width: 400px;
+        height: 300px;
+    }
+
+    .divText{
+        margin: 3vh 0 0 0;
+    }    
+
+    .contentNews {
+        margin: 3vh 0 0 0;
+    }
 }

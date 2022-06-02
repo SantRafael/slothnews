@@ -18,7 +18,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 2vh;
 }
 
-.btnConfig{
+.btnFixedBottom{
     width: 45px;
     height:45px;
     border-radius: 100%;
@@ -37,10 +37,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.btnConfig:hover{
+.btnFixedBottom:hover{
     background-color: #f1fa8c;
 }
 
-.btnConfig:hover i{
+.btnFixedBottom:hover i{
     color: #282a36;
 }

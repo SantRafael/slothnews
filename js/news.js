@@ -12,7 +12,11 @@ function next(final, slide){
     setTimeout(function(){$('.materia'+proximo).removeClass('mySlides');$('.materia'+proximo).addClass('fadeIn');$('.materia'+atual).removeClass('fadeOut');},500);
 }
 
+
 $(document).ready(function(){
+    $(".btnFixedBottom").click( function(){
+      $("html, body").animate({ scrollTop: 0 }, 600);
+    });  
 
     $('.prev').click(function(){
       if($('.materia1').is(':visible')){

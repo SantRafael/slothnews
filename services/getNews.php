@@ -5,8 +5,7 @@
 
     $news = json_decode($newsJson);
 
-    function mountHtml($html, $site, $class, $i, $nameSite){
-        $html = str_replace('#class',         $class,                $html);
+    function mountHtml($html, $site, $i, $nameSite){
         $html = str_replace('#siteImg',       $nameSite.'Img',       $html);
         $html = str_replace('#siteTextColor', $nameSite.'TextColor', $html);
         $html = str_replace('#site',          strtoupper($nameSite), $html);
@@ -19,14 +18,8 @@
     function extractNews($slideNews, $site, $count, $nameSite){
         $htmlFinal = '';
         for($i = 0; $i < $count; $i++ ){
-            $iMateria = $i+1;
-
-            $class = "materia$iMateria fadeIn";
-            if($i > 0)
-                $class .= " mySlides";
-            
             $html = $slideNews;
-            $htmlFinal .= mountHtml($html, $site, $class, $i, $nameSite);
+            $htmlFinal .= mountHtml($html, $site, $i, $nameSite);
         }
 
         return $htmlFinal;
